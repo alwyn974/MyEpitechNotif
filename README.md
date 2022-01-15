@@ -23,6 +23,11 @@ A message will be sended via the discord webhook when new project is available
 
 You can change the host, and port of the relay in `.env` file
 
+## Troubleshooting
+
+- Error of puppeteer saying that chrome binary is not valid (or a message like this)
+> You need to install chromium-browser and specify the path in the `.env` file
+
 ## Thanks
 
 Thanks to Alexis Cheron for creating the [my-epitech-relay](https://github.com/norech/my-epitech-relay)

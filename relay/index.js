@@ -23,6 +23,9 @@ function openMicrosoftWindow(base, url) {
         if (process.env.NO_WINDOW)
             throw new Error("No window mode enabled");
         const browser = yield puppeteer_1.default.launch({
+            executablePath: process.env.BROWSER_BINARY_PATH != ""
+                ? process.env.BROWSER_BINARY_PATH : undefined,
+            product: process.env.BROWSER_TYPE,
             headless: false,
             args: ["--app=https://my.epitech.eu", "--window-size=800,600"]
         });
@@ -40,7 +43,12 @@ function openMicrosoftWindow(base, url) {
 function refreshMyEpitechToken() {
     return __awaiter(this, void 0, void 0, function* () {
         const loginBtnSelector = '[href^="https://login.microsoftonline.com/common/oauth2/authorize"]';
-        const browser = yield puppeteer_1.default.launch({ headless: true });
+        const browser = yield puppeteer_1.default.launch({
+            executablePath: process.env.BROWSER_BINARY_PATH != ""
+                ? process.env.BROWSER_BINARY_PATH : undefined,
+            product: process.env.BROWSER_TYPE,
+            headless: true
+        });
         const page = yield browser.newPage();
         try {
             yield (0, cookies_1.restoreCookies)(page, "./cookies.json");
