@@ -1,7 +1,7 @@
 const {createLogger, format, transports, config} = require("winston");
 const {combine} = format;
 const DailyRotateFile = require("winston-daily-rotate-file");
-const pkg = require("./package.json");
+const pkg = require("../package.json");
 
 let dateFormat = () => {
     let date = new Date();

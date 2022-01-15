@@ -2,10 +2,10 @@ require("dotenv").config();
 const {logger, error} = require("./logger");
 const fs = require("fs");
 const {spawn} = require("child_process");
-const config = require("./config.json")
+const config = require("../config.json")
 const axios = require("axios");
 const {Webhook, MessageBuilder} = require('discord-webhook-node');
-const pkg = require("./package.json");
+const pkg = require("../package.json");
 
 const host = process.env.HOST || "localhost";
 const port = parseInt(process.env.PORT) || 8080;
@@ -97,7 +97,7 @@ const notifier = async () => {
         logger.info("Saving run id of projects...");
         fs.writeFileSync("./tests.json", JSON.stringify(testsId, null, 2));
     } else {
-        let testsId = require("./tests.json");
+        let testsId = require("../tests.json");
         for (const project of data) {
             if (testsId.includes(project.results.testRunId))
                 logger.info(`Test already exist in database: ${project.project.name}`);
