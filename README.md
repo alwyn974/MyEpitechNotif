@@ -21,12 +21,15 @@ A message will be sended via the discord webhook when new project is available
 
 ## Tips
 
-You can change the host, and port of the relay in `.env` file
+> You can change the host, and port of the relay in `.env` file
+
+> You can login into the app (graphically on linux/windows), and then copy the `cookie.json` file to your headless machine
 
 ## Troubleshooting
 
 - Error of puppeteer saying that chrome binary is not valid (or a message like this)
-> You need to install chromium-browser and specify the path in the `.env` file
+
+=> You need to install chromium-browser and specify the path in the `.env` file
 
 ## Thanks
 
