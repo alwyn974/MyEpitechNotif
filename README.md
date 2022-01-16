@@ -21,9 +21,9 @@ A message will be sended via the discord webhook when new project is available
 
 ## Tips
 
-> You can change the host, and port of the relay in `.env` file
+- You can change the host, and port of the relay in `.env` file
 
-> You can login into the app (graphically on linux/windows), and then copy the `cookie.json` file to your headless machine
+- You can login into the app (graphically on linux/windows), and then copy the `cookies.json` file to your headless machine
 
 ## Troubleshooting
 
