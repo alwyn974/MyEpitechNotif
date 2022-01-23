@@ -31,6 +31,11 @@ A message will be sended via the discord webhook when new project is available
 
 => You need to install chromium-browser and specify the path in the `.env` file
 
+- Any error with puppeteer
+
+=> Check the troubleshooting page of puppeteer
+https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
+
 ## Thanks
 
 Thanks to Alexis Cheron for creating the [my-epitech-relay](https://github.com/norech/my-epitech-relay)
