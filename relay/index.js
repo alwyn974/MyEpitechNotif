@@ -20,7 +20,7 @@ const axios_1 = __importDefault(require("axios"));
 const app = (0, express_1.default)();
 function openMicrosoftWindow(base, url) {
     return __awaiter(this, void 0, void 0, function* () {
-        if (process.env.NO_WINDOW)
+        if (process.env.NO_WINDOW == "1")
             throw new Error("No window mode enabled");
         const browser = yield puppeteer_1.default.launch({
             executablePath: process.env.BROWSER_BINARY_PATH != ""
@@ -41,12 +41,14 @@ function openMicrosoftWindow(base, url) {
     });
 }
 function refreshMyEpitechToken() {
+    var _a, _b;
     return __awaiter(this, void 0, void 0, function* () {
         const loginBtnSelector = '[href^="https://login.microsoftonline.com/common/oauth2/authorize"]';
         const browser = yield puppeteer_1.default.launch({
             executablePath: process.env.BROWSER_BINARY_PATH != ""
                 ? process.env.BROWSER_BINARY_PATH : undefined,
             product: process.env.BROWSER_TYPE,
+            args: (_b = (_a = process.env.BROWSER_ARGS) === null || _a === void 0 ? void 0 : _a.split(" ")) !== null && _b !== void 0 ? _b : [],
             headless: true
         });
         const page = yield browser.newPage();
