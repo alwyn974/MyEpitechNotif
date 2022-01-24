@@ -6,6 +6,8 @@ A useful nodejs program to send notification on discord when new result is avail
 
 You need to clone/download this project, and then you need to run `npm install`
 
+You can use the `install-service.sh` script to install the project (clone + setup of a service)
+
 ## Usage
 
 You need to specify the discord webhook link in the `config.json`.
