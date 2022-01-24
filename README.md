@@ -25,6 +25,8 @@ A message will be sended via the discord webhook when new project is available
 
 - You can login into the app (graphically on linux/windows), and then copy the `cookies.json` file to your headless machine
 
+### Check the [wiki](https://github.com/alwyn974/MyEpitechNotif/wiki) for more tips
+
 ## Troubleshooting
 
 - Error of puppeteer saying that chrome binary is not valid (or a message like this)
