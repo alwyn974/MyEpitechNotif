@@ -27,6 +27,8 @@ A message will be sended via the discord webhook when new project is available
 
 - You can login into the app (graphically on linux/windows), and then copy the `cookies.json` file to your headless machine
 
+- **Docker**, **Systemd** is on the wiki page ⬇️
+
 ### Check the [wiki](https://github.com/alwyn974/MyEpitechNotif/wiki) for more tips
 
 ## Troubleshooting
