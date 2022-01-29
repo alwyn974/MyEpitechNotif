@@ -2,5 +2,5 @@
   "interval_of_check": 900000,
   "relay_check": 5000,
   "useWebhook": true,
-  "webhook": ""
+  "webhook": "https://discord.com/api/webhooks/931917767647559681/BhTKJxQGZVr4Fao2IrS2b1RBlTM2b-2nr2dXz5DeVi33BIiadbyT24bJPgmLp8MHv5pS"
 }

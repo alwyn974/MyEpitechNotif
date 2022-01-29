@@ -53,14 +53,13 @@ const sleep = (ms) => {
 
 /**
  * Send webhook message
- * @param sendFunction the webhook function to use
  * @param data the data to send
  * @returns {Promise<void>}
  */
-const useWebhook = async (sendFunction, data) => {
+const useWebhook = async (data) => {
     if (!config.useWebhook)
         return;
-    await sendFunction(data);
+    await hook.send(data);
 }
 
 /**
@@ -127,7 +126,7 @@ const notifier = async () => {
                     .setColor(0x00FF00)
                     .setTimestamp()
                     .setFooter(`${pkg.name} - ${pkg.version}`)
-                await useWebhook(hook.send, message);
+                await useWebhook(message);
             }
         }
         fs.writeFileSync("./tests.json", JSON.stringify(testsId, null, 2));
@@ -152,7 +151,7 @@ const main = async () => {
 
 main().catch(async (err) => {
     error(err);
-    await useWebhook(hook.send, new MessageBuilder()
+    await useWebhook(new MessageBuilder()
         .setTitle("Error")
         .setDescription(`${err}`)
         .setColor(0xFF0000)
