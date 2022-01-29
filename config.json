@@ -1,5 +1,6 @@
 {
   "interval_of_check": 900000,
   "relay_check": 5000,
+  "useWebhook": true,
   "webhook": ""
 }
