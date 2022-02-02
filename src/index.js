@@ -4,7 +4,7 @@ const fs = require("fs");
 const {spawn} = require("child_process");
 const config = require("../config.json")
 const axios = require("axios");
-const {Webhook, MessageBuilder} = require('discord-webhook-node');
+const {Webhook, MessageBuilder} = require("discord-webhook-node");
 const pkg = require("../package.json");
 
 const host = process.env.HOST || "localhost";
@@ -134,6 +134,19 @@ const notifier = async () => {
 }
 
 /**
+ * Convert ms to hours, minutes, seconds and ms
+ * @param ms the milliseconds
+ * @returns {string} the formated time
+ */
+const msToTime = (ms) => {
+    let totalTime = ms;
+    let seconds = (totalTime / 1000) % 60;
+    let minutes = ((totalTime / (1000 * 60)) % 60);
+    let hours   = ((totalTime / (1000 * 60 * 60)) % 24);
+    return parseInt(`${hours}`) + " hours " + parseInt(`${minutes}`) + " minutes " + parseInt(`${seconds}`) + " seconds and " + parseInt(`${totalTime % 1000}`) + " milliseconds";
+}
+
+/**
  * Simply a main
  * @returns {Promise<void>}
  */
@@ -142,7 +155,7 @@ const main = async () => {
     startRelay();
     logger.info("Checking relay");
     await checkRelay();
-    logger.info(`Interval of fetching data is set to ${interval}ms`)
+    logger.info(`Interval of fetching data is set to ${msToTime(interval)}`)
     await notifier();
     setInterval(async () => {
         await notifier();
