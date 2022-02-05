@@ -13,9 +13,12 @@ const relayPath = "./relay/index.js"
 const interval = config.interval_of_check || 15 * 60 * 1000;
 const relayCheck = config.relay_check || 5000;
 const url = `http://${host}:${port}/`
-const hook = new Webhook(config.webhook);
-hook.setAvatar("https://my.epitech.eu/favicon.png");
-hook.setUsername("MyEpitech");
+let hook = null;
+if (config.useWebhook) {
+    hook = new Webhook(config.webhook);
+    hook.setAvatar("https://my.epitech.eu/favicon.png");
+    hook.setUsername("MyEpitech");
+}
 
 /**
  * Start my.epitech.eu relay in child process (Thanks to https://github.com/norech/my-epitech-relay)
